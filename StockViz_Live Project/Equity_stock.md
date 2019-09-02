@@ -81,6 +81,8 @@ nifty <- as.data.frame(nifty_index)
 
 ```R
 abs_returns <- (c(diff(nifty$CLOSE,lag=1)*(-1),0)) 
+
+nifty <- data.frame(nifty, abs_returns)
 ```
 
 
