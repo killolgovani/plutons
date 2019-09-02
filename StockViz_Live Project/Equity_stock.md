@@ -58,7 +58,7 @@ equitiesIndiaNse$EodTimeSeries() %>%
 auto_index <- indices$NseTimeSeries() %>%
                  filter(NAME == "NIFTY 50") %>%  
                  arrange(desc(TIME_STAMP)) %>%
-                 print(n=4)
+                 print(n=5)
 ```
 
     [90m# Source:     lazy query [?? x 7][39m
@@ -70,6 +70,7 @@ auto_index <- indices$NseTimeSeries() %>%
     [90m2[39m NIFTY 50 2019-08-29 [4m1[24m[4m1[24m021. [4m1[24m[4m0[24m922. [4m1[24m[4m0[24m996. [4m1[24m[4m0[24m948. 649[4m8[24m[4m7[24m[4m6[24m160
     [90m3[39m NIFTY 50 2019-08-28 [4m1[24m[4m1[24m130. [4m1[24m[4m0[24m988. [4m1[24m[4m1[24m101. [4m1[24m[4m1[24m046. 549[4m9[24m[4m5[24m[4m4[24m696
     [90m4[39m NIFTY 50 2019-08-27 [4m1[24m[4m1[24m142. [4m1[24m[4m1[24m050. [4m1[24m[4m1[24m107. [4m1[24m[4m1[24m105. 685[4m5[24m[4m5[24m[4m1[24m267
+    [90m5[39m NIFTY 50 2019-08-26 [4m1[24m[4m1[24m070. [4m1[24m[4m0[24m757. [4m1[24m[4m1[24m000. [4m1[24m[4m1[24m058. 684[4m1[24m[4m4[24m[4m1[24m923
     [90m# … with more rows[39m
 
 
@@ -89,16 +90,17 @@ length(auto$CLOSE)
 
 
 ```R
+n=1
 while(n<length(auto$CLOSE))
 {
-    RETURNS[i] = auto$CLOSE[i] - auto$CLOSE[i+1]
+    RETURNS[n] = auto$CLOSE[n] - auto$CLOSE[n+1]
 }
 
 RETURNS
 ```
 
 
-    Error in n < length(auto$CLOSE): comparison (3) is possible only for atomic and list types
+    Error in eval(expr, envir, enclos): object 'RETURNS' not found
     Traceback:
 
 
