@@ -80,11 +80,11 @@ auto <- as.data.frame(auto_index)
 
 
 ```R
-auto$CLOSE[1]
+auto$CLOSE[1] - auto$OPEN[1]
 ```
 
 
-11023.25
+35.4500000000007
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)
