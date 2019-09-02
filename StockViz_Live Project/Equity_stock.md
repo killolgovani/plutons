@@ -91,6 +91,7 @@ length(auto$CLOSE)
 
 ```R
 n=1
+RETURNS[] = 0
 while(n<length(auto$CLOSE))
 {
     RETURNS[n] = auto$CLOSE[n] - auto$CLOSE[n+1]
@@ -100,7 +101,7 @@ RETURNS
 ```
 
 
-    Error in eval(expr, envir, enclos): object 'RETURNS' not found
+    Error in RETURNS[] = 0: object 'RETURNS' not found
     Traceback:
 
 
