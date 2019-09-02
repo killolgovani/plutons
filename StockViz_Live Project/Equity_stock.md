@@ -58,7 +58,7 @@ equitiesIndiaNse$EodTimeSeries() %>%
 nifty_index <- indices$NseTimeSeries() %>%
                  filter(NAME == "NIFTY 50") %>%  
                  arrange(desc(TIME_STAMP)) %>%
-                 print(n=5)
+                 print(n=4)
 ```
 
     [90m# Source:     lazy query [?? x 7][39m
@@ -70,7 +70,6 @@ nifty_index <- indices$NseTimeSeries() %>%
     [90m2[39m NIFTY 50 2019-08-29 [4m1[24m[4m1[24m021. [4m1[24m[4m0[24m922. [4m1[24m[4m0[24m996. [4m1[24m[4m0[24m948. 649[4m8[24m[4m7[24m[4m6[24m160
     [90m3[39m NIFTY 50 2019-08-28 [4m1[24m[4m1[24m130. [4m1[24m[4m0[24m988. [4m1[24m[4m1[24m101. [4m1[24m[4m1[24m046. 549[4m9[24m[4m5[24m[4m4[24m696
     [90m4[39m NIFTY 50 2019-08-27 [4m1[24m[4m1[24m142. [4m1[24m[4m1[24m050. [4m1[24m[4m1[24m107. [4m1[24m[4m1[24m105. 685[4m5[24m[4m5[24m[4m1[24m267
-    [90m5[39m NIFTY 50 2019-08-26 [4m1[24m[4m1[24m070. [4m1[24m[4m0[24m757. [4m1[24m[4m1[24m000. [4m1[24m[4m1[24m058. 684[4m1[24m[4m4[24m[4m1[24m923
     [90m# … with more rows[39m
 
 
@@ -84,7 +83,24 @@ nifty <- as.data.frame(nifty_index)
 abs_returns <- (c(diff(nifty$CLOSE,lag=1)*(-1),0)) 
 
 nifty <- data.frame(nifty, abs_returns)
+
+n <- 1
+while(n<=(length$abs_returns)-1)){
+    per_returns[n] <- (nifty$abs_returns[n]/nifty[n+1])
+    n = n+1
+}
+
+length(per_returns)
 ```
+
+
+    Error in parse(text = x, srcfile = src): <text>:6:33: unexpected ')'
+    5: n <- 1
+    6: while(n<=(length$abs_returns)-1))
+                                       ^
+    Traceback:
+
+
 
 
 ```R
@@ -94,7 +110,7 @@ dim(nifty)
 
 <ol class=list-inline>
 	<li>7055</li>
-	<li>8</li>
+	<li>7</li>
 </ol>
 
 
