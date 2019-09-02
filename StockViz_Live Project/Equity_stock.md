@@ -84,13 +84,4 @@ auto <- as.data.frame(auto_index)
 returns <- diff(auto$CLOSE,lag=1)
 ```
 
-
-```R
-length(returns)
-```
-
-
-7054
-
-
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)
