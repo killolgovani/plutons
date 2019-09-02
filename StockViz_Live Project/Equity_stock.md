@@ -85,7 +85,7 @@ abs_returns <- (c(diff(nifty$CLOSE,lag=1)*(-1),0))
 nifty <- data.frame(nifty, abs_returns)
 
 n <- 1
-while(n<=(length$abs_returns)-1)){
+while(n<=(length(nifty$abs_returns)-1)){
     per_returns[n] <- (nifty$abs_returns[n]/nifty[n+1])
     n = n+1
 }
@@ -94,12 +94,20 @@ length(per_returns)
 ```
 
 
-    Error in parse(text = x, srcfile = src): <text>:6:33: unexpected ')'
-    5: n <- 1
-    6: while(n<=(length$abs_returns)-1))
-                                       ^
+    Error in Ops.Date(left, right): / not defined for "Date" objects
     Traceback:
 
+
+    1. Ops.data.frame(nifty$abs_returns[n], nifty[n + 1])
+
+    2. eval(f)
+
+    3. eval(f)
+
+    4. Ops.Date(left, right)
+
+    5. stop(gettextf("%s not defined for \"Date\" objects", .Generic), 
+     .     domain = NA)
 
 
 
@@ -110,7 +118,7 @@ dim(nifty)
 
 <ol class=list-inline>
 	<li>7055</li>
-	<li>7</li>
+	<li>8</li>
 </ol>
 
 
