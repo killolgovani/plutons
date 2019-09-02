@@ -86,7 +86,7 @@ nifty <- data.frame(nifty, abs_returns)
 
 n <- 1
 while(n<=(length(nifty$abs_returns)-1)){
-    per_returns[n] <- (nifty$abs_returns[n]/nifty[n+1])
+    per_returns[n] <- (nifty$abs_returns[n]/nifty$CLOSE[n+1])
     n = n+1
 }
 
@@ -94,20 +94,9 @@ length(per_returns)
 ```
 
 
-    Error in Ops.Date(left, right): / not defined for "Date" objects
+    Error in eval(expr, envir, enclos): object 'per_returns' not found
     Traceback:
 
-
-    1. Ops.data.frame(nifty$abs_returns[n], nifty[n + 1])
-
-    2. eval(f)
-
-    3. eval(f)
-
-    4. Ops.Date(left, right)
-
-    5. stop(gettextf("%s not defined for \"Date\" objects", .Generic), 
-     .     domain = NA)
 
 
 
