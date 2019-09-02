@@ -80,11 +80,25 @@ auto <- as.data.frame(auto_index)
 
 
 ```R
-auto$CLOSE[1] - auto$OPEN[1]
+nrow(auto$CLOSE)
 ```
 
 
-35.4500000000007
+    NULL
+
+
+
+```R
+for(i in auto$CLOSE)
+{
+    RETURNS[i] = auto
+}
+```
+
+
+    Error in eval(expr, envir, enclos): object 'RETURNS' not found
+    Traceback:
+
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)
