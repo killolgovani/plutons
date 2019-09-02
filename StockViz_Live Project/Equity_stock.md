@@ -89,20 +89,15 @@ length(auto$CLOSE)
 
 
 ```R
-n=1
-RETURNS[] = 0
-while(n<length(auto$CLOSE))
-{
-    RETURNS[n] = auto$CLOSE[n] - auto$CLOSE[n+1]
-}
-
-RETURNS
+diff(CLOSE,lag=1)
 ```
 
 
-    Error in RETURNS[] = 0: object 'RETURNS' not found
+    Error in diff(CLOSE, lag = 1): object 'CLOSE' not found
     Traceback:
 
+
+    1. diff(CLOSE, lag = 1)
 
 
 This notebook was created using [pluto](http://pluto.studio). Learn more [here](https://github.com/shyams80/pluto)
